@@ -1,23 +1,20 @@
 package method;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
-public class UCS {
-
-    public void find(String firstword, String lastword, List<String> words) {
+public class AStar {
+    public void find(String firstword, String lastword, List<String> words){
         WordUtil util = new WordUtil();
         List<String> wordsCopy = new ArrayList<>(words);
         PriorityQueue<Node> queue = new PriorityQueue<Node>();
-        Node node = new Node(firstword, 0,1, null);
+        Node node = new Node(firstword, 0, 1, null);
 
         queue.add(node);
 
         Node result = new Node("", 0, 0, null);
 
         int nodeCount = 0;
-        // Algoritma UCS
+        // Algoritma A*
         Long start = System.currentTimeMillis();
         while (!queue.isEmpty()) {
             Node current = queue.remove();
@@ -28,7 +25,7 @@ public class UCS {
                 break;
             }
             int val = current.getValue() + 1;
-            ArrayList<Node> nextWords = util.findWordsUCS(wordsCopy, current.getWord(), val, current);
+            ArrayList<Node> nextWords = util.findWordsAStar(wordsCopy, current.getWord(), val, current, lastword);
             queue.addAll(nextWords);
         }
 
@@ -55,7 +52,5 @@ public class UCS {
                 System.out.print(resultWords.get(i) + " -> ");
             }
         }
-
-
     }
 }

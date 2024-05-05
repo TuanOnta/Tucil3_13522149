@@ -1,35 +1,33 @@
 package method;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
-public class UCS {
-
+public class GreedyBFS {
     public void find(String firstword, String lastword, List<String> words) {
         WordUtil util = new WordUtil();
         List<String> wordsCopy = new ArrayList<>(words);
-        PriorityQueue<Node> queue = new PriorityQueue<Node>();
-        Node node = new Node(firstword, 0,1, null);
 
-        queue.add(node);
+        Node root = new Node(firstword, 0, 1, null); //value pada node pertama tidak digunakan
+        
 
-        Node result = new Node("", 0, 0, null);
-
-        int nodeCount = 0;
-        // Algoritma UCS
+        // Algoritma Greedy BFS
+        int nodeCount = 1;
         Long start = System.currentTimeMillis();
-        while (!queue.isEmpty()) {
-            Node current = queue.remove();
+        PriorityQueue<Node> tempQueue = new PriorityQueue<Node>();
+        tempQueue = util.findWordGreedyBFS(wordsCopy, firstword, root, lastword);
+        Node current = tempQueue.poll();
+        nodeCount += tempQueue.size();
+        while (!tempQueue.isEmpty() && !current.getWord().equals(lastword)){
+            // System.out.println(current.getWord());
             wordsCopy.remove(current.getWord());
-            nodeCount++;
-            if (current.getWord().equals(lastword)) {
-                result = current;
-                break;
-            }
-            int val = current.getValue() + 1;
-            ArrayList<Node> nextWords = util.findWordsUCS(wordsCopy, current.getWord(), val, current);
-            queue.addAll(nextWords);
+
+            tempQueue = util.findWordGreedyBFS(wordsCopy, current.getWord(), current, lastword);
+            current = tempQueue.poll();
+            nodeCount += tempQueue.size();
+        }
+        if (tempQueue.isEmpty()){
+            System.out.println("Tidak ditemukan jalan");
+            return;
         }
 
         Long end = System.currentTimeMillis();
@@ -42,7 +40,7 @@ public class UCS {
 
         // print hasil
         ArrayList<String> resultWords = new ArrayList<>();
-        Node temp = result;
+        Node temp = current;
         while (temp != null) {
             resultWords.add(temp.getWord());
             temp = temp.getParent();
@@ -55,7 +53,6 @@ public class UCS {
                 System.out.print(resultWords.get(i) + " -> ");
             }
         }
-
 
     }
 }

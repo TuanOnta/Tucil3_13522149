@@ -1,13 +1,18 @@
-import java.lang.reflect.Array;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import scraping_dictionary.Scraping;
 import method.*;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
-        WordUtil util = new WordUtil();
-       System.out.print("Apakah anda ingin mengambil data dari dictionary lain? (y/n) : ");
+        System.out.println("Selamat datang di program Word Ladder Solver!!");
+        
+
+        System.out.print("Apakah anda ingin mengambil data dari dictionary lain? (y/n) : ");
 
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.nextLine();
@@ -28,35 +33,89 @@ public class main {
             }
         }
 
+        String firstword = "";
+        String lastword = "";
         
-        System.out.print("Masukkan kata awal: ");
-        String firstword = scanner.nextLine();
-        System.out.print("Masukkan kata akhir: ");
-        String lastword = scanner.nextLine();
-
-        System.out.println();
-        System.out.println("Masukan Algoritma yang ingin digunakan: ");
-        System.out.println("1. Uniform Cost Search");
-        System.out.println("2. Greedy Best First Search Search");
-        System.out.println("3. A* Search");
-        
+        // Membaca kata awal
         flag = true;
-        ArrayList<String> result;
-        while (flag){
-            System.out.print("Masukkan pilihan: ");
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    result = new UCS().UCS(firstword, lastword);
-                    flag = false;
-                    System.out.println("Kata yang ditemukan: ");
-                    result.stream().forEach(System.out::println);
-                    break;
-                default:
-                    System.out.println("Input tidak valid, silahkan masukkan angka 1-3");
-                    break;
+        while (flag) {
+            System.out.print("Masukkan kata awal: ");
+            firstword = scanner.nextLine();
+            firstword = firstword.toLowerCase();
+            int len = firstword.length();
+            List<String> words = new ArrayList<>();
+            String fileName = "src/Data/words" + len + ".txt";
+            try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    // Hapus spasi ekstra jika ada
+                    String temp = line.trim();
+                    words.add(temp);
+                }
+            } catch (IOException e) {
+                System.err.println("Gagal membaca file: " + e.getMessage());
+            }
+    
+            if (!words.contains(firstword)){
+                System.out.println("Kata awal tidak ada di dictionary");
+            }else{
+                flag = false;
             }
         }
 
+        // Membaca file kata-kata
+        int len = firstword.length();
+        List<String> words = new ArrayList<>();
+        String fileName = "src/Data/words" + len + ".txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // Hapus spasi ekstra jika ada
+                String temp = line.trim();
+                words.add(temp);
+            }
+        } catch (IOException e) {
+            System.err.println("Gagal membaca file: " + e.getMessage());
+        }
+
+
+        // Membaca kata akhir
+        flag = true;
+        while(flag){
+            System.out.print("Masukkan kata akhir: ");
+            lastword = scanner.nextLine();
+            lastword = lastword.toLowerCase();
+            if(lastword.length() != firstword.length()){
+                System.out.println("Kata awal dan kata akhir harus memiliki panjang yang sama");
+            }else if(!words.contains(lastword)){
+                System.out.println("Kata akhir tidak ada di dictionary");
+            }else{
+                flag = false;
+            }
+
+        }
+
+        System.out.println("Kata awal: " + firstword);
+        System.out.println("Kata akhir: " + lastword);
+
+        // Algortima UCS
+        UCS ucs = new UCS();
+        System.out.println("\nAlgortima UCS");
+        ucs.find(firstword, lastword, words);
+        
+
+        // Algortima GreedyBFS
+        GreedyBFS greedyBFS = new GreedyBFS();
+        System.out.println("\n\nAlgortima GreedyBFS");
+        greedyBFS.find(firstword, lastword, words);
+        
+
+        // Algortima A*
+        AStar aStar = new AStar();
+        System.out.println("\n\nAlgortima A*");
+        aStar.find(firstword, lastword, words);
+
+
+        scanner.close();
     }
 }

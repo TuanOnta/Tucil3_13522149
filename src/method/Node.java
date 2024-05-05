@@ -1,19 +1,19 @@
 package method;
 
-import java.util.ArrayList;
-
 public class Node implements Comparable<Node> { 
     private String word;
     private int len;
     private int value;
-    private ArrayList<String> parent;
+    private int age;
+    private Node parent;
 
     // Constructor
-    public Node(String word, int value) {
+    public Node(String word, int value, int age, Node parent) {
         this.word = word;
         this.len = word.length();
-        this.parent = new ArrayList<String>();
+        this.parent = parent;
         this.value = value;
+        this.age = age;
     }
 
     // Getter
@@ -26,7 +26,12 @@ public class Node implements Comparable<Node> {
     public int getValue() {
         return value;
     }
-    public ArrayList<String> getParent() {
+
+    public int getAge() {
+        return age;
+    }
+
+    public Node getParent() {
         return parent;
     }
 
@@ -35,8 +40,8 @@ public class Node implements Comparable<Node> {
         this.word = word;
         this.len = word.length();
     }
-    public void setParent(ArrayList<String> parent) {
-        this.parent = new ArrayList<>(parent);
+    public void setParent(Node parent) {
+        this.parent = parent;
     }
     public void setValue(int value) {
         this.value = value;
@@ -46,40 +51,35 @@ public class Node implements Comparable<Node> {
     public void addValue() {
         this.value ++;
     }
-    
-    // Menambahkan parent
-    public void addParent(String parent) {
-        this.parent.add(parent);
-    }
 
-    // Menghapus parent
-    public void removeParent(String parent) {
-        this.parent.remove(parent);
+    // Menambah age
+    public void addAge() {
+        this.age ++;
     }
+    
 
     // Apakah parent kosong
     public void isParentEmpty() {
-        if (this.parent.isEmpty()) {
+        if (this.parent == null) {
             System.out.println("Parent kosong");
         } else {
             System.out.println("Parent tidak kosong");
         }
     }
 
-    // Apakah parent mengandung kata tertentu
-    public boolean isParentContains(String parent) {
-        return this.parent.contains(parent);
-    }
-
     @Override
     public int compareTo(Node node) {
        if (this.value < node.value) {
            return -1;
-       } else if (this.value > node.value) {
-           return 1;
-       } else {
-           return 0;
-       }
+        } else if (this.value > node.value) {
+            return 1;
+        } else if (this.age < node.age) {
+            return -1;
+        }else if(this.age > node.age){
+            return 1;
+        }else{
+            return 0;
+         }
     }
 
 }
