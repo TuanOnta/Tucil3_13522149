@@ -1,0 +1,20 @@
+Kata awal: cat
+Kata akhir: hat
+
+Algortima UCS
+Waktu eksekusi: 2 ms
+Waktu eksekusi : 0.002 s
+Jumlah node yang dikunjungi: 7
+cat -> hat
+
+Algortima GreedyBFS
+Waktu eksekusi: 2 ms
+Waktu eksekusi : 0.002 s
+Jumlah node yang dikunjungi: 41
+cat -> hat
+
+Algortima A*
+Waktu eksekusi: 0 ms
+Waktu eksekusi : 0.0 s
+Jumlah node yang dikunjungi: 2
+cat -> hat

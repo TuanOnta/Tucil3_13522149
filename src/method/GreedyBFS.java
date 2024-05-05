@@ -3,7 +3,7 @@ package method;
 import java.util.*;
 
 public class GreedyBFS {
-    public void find(String firstword, String lastword, List<String> words) {
+    public ArrayList<Object> find(String firstword, String lastword, List<String> words) {
         WordUtil util = new WordUtil();
         List<String> wordsCopy = new ArrayList<>(words);
 
@@ -27,7 +27,7 @@ public class GreedyBFS {
         }
         if (tempQueue.isEmpty()){
             System.out.println("Tidak ditemukan jalan");
-            return;
+            return null;
         }
 
         Long end = System.currentTimeMillis();
@@ -54,5 +54,11 @@ public class GreedyBFS {
             }
         }
 
+        ArrayList<Object> resultList = new ArrayList<>();
+        resultList.add(current);
+        resultList.add(time);
+        resultList.add(nodeCount);
+        return resultList;
+        
     }
 }

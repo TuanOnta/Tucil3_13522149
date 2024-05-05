@@ -1,0 +1,18 @@
+Kata awal: thin
+Kata akhir: fine
+
+Algortima UCS
+Waktu eksekusi: 2846 ms
+Waktu eksekusi : 2.846 s
+Jumlah node yang dikunjungi: 52373
+thin -> tain -> tait -> fait -> fant -> fane -> fine
+
+Algortima GreedyBFS
+Tidak ditemukan jalan
+
+
+Algortima A*
+Waktu eksekusi: 192 ms
+Waktu eksekusi : 0.192 s
+Jumlah node yang dikunjungi: 1734
+thin -> then -> tien -> lien -> linn -> finn -> fine

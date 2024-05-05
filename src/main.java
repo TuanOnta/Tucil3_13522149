@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Selamat datang di program Word Ladder Solver!!");
         
-
         System.out.print("Apakah anda ingin mengambil data dari dictionary lain? (y/n) : ");
 
         Scanner scanner = new Scanner(System.in);
@@ -92,7 +93,6 @@ public class Main {
             }else{
                 flag = false;
             }
-
         }
 
         System.out.println("Kata awal: " + firstword);
@@ -101,21 +101,153 @@ public class Main {
         // Algortima UCS
         UCS ucs = new UCS();
         System.out.println("\nAlgortima UCS");
-        ucs.find(firstword, lastword, words);
+        ArrayList<Object> ListUCS = ucs.find(firstword, lastword, words);
         
 
         // Algortima GreedyBFS
         GreedyBFS greedyBFS = new GreedyBFS();
         System.out.println("\n\nAlgortima GreedyBFS");
-        greedyBFS.find(firstword, lastword, words);
-        
+        ArrayList<Object> ListGreedyBFS = greedyBFS.find(firstword, lastword, words);
+        if(ListGreedyBFS == null){
+            ListGreedyBFS = new ArrayList<Object>();
+            ListGreedyBFS.add("Tidak ditemukan jalan");
+        }
 
         // Algortima A*
-        AStar aStar = new AStar();
+        AStar AStar = new AStar();
         System.out.println("\n\nAlgortima A*");
-        aStar.find(firstword, lastword, words);
+        ArrayList<Object> ListAStar = AStar.find(firstword, lastword, words);
 
 
+
+        // Menyimpan solusis
+        System.out.print("\nApakah anda ingin menyimpan solusi?(y/n) : ");
+        answer = scanner.nextLine();
+        flag = true;
+        while (flag){
+            if (answer.equals("y")){
+                flag = false;
+            } else if (answer.equals("n")){
+                flag = false;
+            } else {
+                System.out.print("Input tidak valid, silahkan masukkan y atau n : ");
+                answer = scanner.nextLine();
+            }
+        }
+
+        // Menyimpan solusi
+        if(answer.equals("y")){
+            System.out.print("Masukkan nama file test (tanpa .txt): ");
+            String filename = scanner.nextLine();
+            System.out.println("Solusi akan disimpan di test/");
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("test/" + filename + ".txt"))) {
+
+                writer.write("Kata awal: " + firstword);
+                writer.newLine();
+                writer.write("Kata akhir: " + lastword);
+                writer.newLine();
+
+                // Menyimpan solusi UCS
+                writer.write("\nAlgortima UCS");
+                writer.newLine();
+                ArrayList<String> resultWords = new ArrayList<>();
+                Node temp = (Node) ListUCS.get(0);
+                while (temp != null) {
+                    resultWords.add(temp.getWord());
+                    temp = temp.getParent();
+                }
+
+                Long time = (Long) ListUCS.get(1);
+                writer.write("Waktu eksekusi: " + time + " ms");
+                writer.newLine();
+                float seconds = (time / 1000F);
+                writer.write("Waktu eksekusi : " + seconds + " s");
+                writer.newLine();
+
+                int nodeCount = (int) ListUCS.get(2);
+                writer.write("Jumlah node yang dikunjungi: " + nodeCount);
+                writer.newLine();
+
+                for (int i = resultWords.size() - 1; i >= 0; i--) {
+                    if (i == 0) {
+                        writer.write(resultWords.get(i));
+                    } else {
+                        writer.write(resultWords.get(i) + " -> ");
+                    }
+                }
+                
+
+                // Menyimpan solusi GreedyBFS
+                writer.write("\n\nAlgortima GreedyBFS");
+                writer.newLine();
+
+                resultWords = new ArrayList<>();
+                if (ListGreedyBFS.get(0) instanceof String) {
+                    writer.write("Tidak ditemukan jalan");
+                    writer.newLine();
+                } else {
+                    temp = (Node) ListGreedyBFS.get(0);
+                    
+                    while (temp != null) {
+                        resultWords.add(temp.getWord());
+                        temp = temp.getParent();
+                    }
+
+                    time = (Long) ListGreedyBFS.get(1);
+                    writer.write("Waktu eksekusi: " + time + " ms");
+                    writer.newLine();
+                    seconds = (time / 1000F);
+                    writer.write("Waktu eksekusi : " + seconds + " s");
+                    writer.newLine();
+                    
+                    nodeCount = (int) ListGreedyBFS.get(2);
+                    writer.write("Jumlah node yang dikunjungi: " + nodeCount);
+                    writer.newLine();
+                    
+                    for (int i = resultWords.size() - 1; i >= 0; i--) {
+                        if (i == 0) {
+                            writer.write(resultWords.get(i));
+                        } else {
+                            writer.write(resultWords.get(i) + " -> ");
+                        }
+                    }
+                }
+                
+                // Menyimpan solusi AStar
+                writer.write("\n\nAlgortima A*");
+                writer.newLine();
+                resultWords = new ArrayList<>();
+                temp = (Node) ListAStar.get(0);
+                while (temp != null) {
+                    resultWords.add(temp.getWord());
+                    temp = temp.getParent();
+                }
+                
+                time = (Long) ListAStar.get(1);
+                writer.write("Waktu eksekusi: " + time + " ms");
+                writer.newLine();
+                seconds = (time / 1000F);
+                writer.write("Waktu eksekusi : " + seconds + " s");
+                writer.newLine();
+                
+                nodeCount = (int) ListAStar.get(2);
+                writer.write("Jumlah node yang dikunjungi: " + nodeCount);
+                writer.newLine();
+                
+                for (int i = resultWords.size() - 1; i >= 0; i--) {
+                    if (i == 0) {
+                        writer.write(resultWords.get(i));
+                    } else {
+                        writer.write(resultWords.get(i) + " -> ");
+                    }
+                }
+                System.out.println("File berhasil dibuat: AStar.txt");
+                
+            } catch (IOException e) {
+                System.err.println("Gagal membuat file: " + e.getMessage());
+            }
+            }
+            
         scanner.close();
     }
 }

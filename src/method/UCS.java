@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 
 public class UCS {
 
-    public void find(String firstword, String lastword, List<String> words) {
+    public ArrayList<Object> find(String firstword, String lastword, List<String> words) {
         WordUtil util = new WordUtil();
         List<String> wordsCopy = new ArrayList<>(words);
         PriorityQueue<Node> queue = new PriorityQueue<Node>();
@@ -55,6 +55,12 @@ public class UCS {
                 System.out.print(resultWords.get(i) + " -> ");
             }
         }
+
+        ArrayList<Object> resultList = new ArrayList<>();
+        resultList.add(result);
+        resultList.add(time);
+        resultList.add(nodeCount);
+        return resultList;
 
 
     }
