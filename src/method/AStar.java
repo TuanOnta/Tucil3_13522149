@@ -37,6 +37,13 @@ public class AStar {
         System.out.println("Waktu eksekusi : " + seconds + " s");
         System.out.println("Jumlah node yang dikunjungi: " + nodeCount);
 
+        // menghitung besar memori
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc();
+        long memory = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Memori yang digunakan: " + memory + " bytes");
+
+        
         // print hasil
         ArrayList<String> resultWords = new ArrayList<>();
         Node temp = result;
@@ -61,6 +68,7 @@ public class AStar {
         resultList.add(result);
         resultList.add(time);
         resultList.add(nodeCount);
+        resultList.add(memory);
         return resultList;
     }
 }

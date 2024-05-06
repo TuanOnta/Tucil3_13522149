@@ -33,10 +33,17 @@ public class GreedyBFS {
         Long end = System.currentTimeMillis();
         Long time = end - start;
 
+        // menghitung besar memori
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc();
+        long memory = runtime.totalMemory() - runtime.freeMemory();
+        
+
         System.out.println("Waktu eksekusi: " + time + " ms");
         float seconds = (time / 1000F);
         System.out.println("Waktu eksekusi : " + seconds + " s");
         System.out.println("Jumlah node yang dikunjungi: " + nodeCount);
+        System.out.println("Memori yang digunakan: " + memory + " bytes");
 
         // print hasil
         ArrayList<String> resultWords = new ArrayList<>();
@@ -58,6 +65,7 @@ public class GreedyBFS {
         resultList.add(current);
         resultList.add(time);
         resultList.add(nodeCount);
+        resultList.add(memory);
         return resultList;
         
     }
