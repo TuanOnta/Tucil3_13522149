@@ -179,6 +179,11 @@ public class Main {
                     writer.write("Jumlah node yang dikunjungi: " + nodeCount);
                     writer.newLine();
 
+                    long memory = (long) ListUCS.get(3);
+                    writer.write("Memori yang digunakan: " + memory + " bytes");
+                    writer.newLine();
+
+
                     for (int i = resultWords.size() - 1; i >= 0; i--) {
                         if (i == 0) {
                             writer.write(resultWords.get(i));
@@ -214,6 +219,10 @@ public class Main {
                     int nodeCount = (int) ListGreedyBFS.get(2);
                     writer.write("Jumlah node yang dikunjungi: " + nodeCount);
                     writer.newLine();
+
+                    long memory = (long) ListGreedyBFS.get(3);
+                    writer.write("Memori yang digunakan: " + memory + " bytes");
+                    writer.newLine();
                     
                     for (int i = resultWords.size() - 1; i >= 0; i--) {
                         if (i == 0) {
@@ -248,6 +257,10 @@ public class Main {
                     
                     int nodeCount = (int) ListAStar.get(2);
                     writer.write("Jumlah node yang dikunjungi: " + nodeCount);
+                    writer.newLine();
+
+                    long memory = (long) ListAStar.get(3);
+                    writer.write("Memori yang digunakan: " + memory + " bytes");
                     writer.newLine();
                     
                     for (int i = resultWords.size() - 1; i >= 0; i--) {
