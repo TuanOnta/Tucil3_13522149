@@ -1,0 +1,20 @@
+Kata awal: lute
+Kata akhir: harp
+
+Algortima UCS
+Waktu eksekusi: 1798 ms
+Waktu eksekusi : 1.798 s
+Jumlah node yang dikunjungi: 24032
+lute -> late -> hate -> hare -> harp
+
+Algortima GreedyBFS
+Waktu eksekusi: 13 ms
+Waktu eksekusi : 0.013 s
+Jumlah node yang dikunjungi: 116
+lute -> late -> hate -> hare -> harp
+
+Algortima A*
+Waktu eksekusi: 28 ms
+Waktu eksekusi : 0.028 s
+Jumlah node yang dikunjungi: 70
+lute -> late -> hate -> hare -> harp

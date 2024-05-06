@@ -1,0 +1,20 @@
+Kata awal: pile
+Kata akhir: heap
+
+Algortima UCS
+Waktu eksekusi: 1422 ms
+Waktu eksekusi : 1.422 s
+Jumlah node yang dikunjungi: 17046
+pile -> pele -> hele -> help -> heap
+
+Algortima GreedyBFS
+Waktu eksekusi: 11 ms
+Waktu eksekusi : 0.011 s
+Jumlah node yang dikunjungi: 84
+pile -> hile -> hele -> help -> heap
+
+Algortima A*
+Waktu eksekusi: 22 ms
+Waktu eksekusi : 0.022 s
+Jumlah node yang dikunjungi: 53
+pile -> pele -> hele -> help -> heap

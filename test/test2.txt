@@ -1,0 +1,20 @@
+Kata awal: rest
+Kata akhir: room
+
+Algortima UCS
+Waktu eksekusi: 2048 ms
+Waktu eksekusi : 2.048 s
+Jumlah node yang dikunjungi: 25790
+rest -> reit -> roit -> root -> room
+
+Algortima GreedyBFS
+Waktu eksekusi: 13 ms
+Waktu eksekusi : 0.013 s
+Jumlah node yang dikunjungi: 70
+rest -> rist -> riot -> root -> room
+
+Algortima A*
+Waktu eksekusi: 34 ms
+Waktu eksekusi : 0.034 s
+Jumlah node yang dikunjungi: 101
+rest -> reit -> roit -> root -> room

@@ -1,0 +1,20 @@
+Kata awal: jack
+Kata akhir: jill
+
+Algortima UCS
+Waktu eksekusi: 3494 ms
+Waktu eksekusi : 3.494 s
+Jumlah node yang dikunjungi: 62649
+jack -> fack -> falk -> fall -> fill -> jill
+
+Algortima GreedyBFS
+Waktu eksekusi: 37 ms
+Waktu eksekusi : 0.037 s
+Jumlah node yang dikunjungi: 231
+jack -> jock -> jack -> juck -> junk -> jink -> jina -> jiva -> jive -> jibe -> jibb -> jibi -> jiri -> jiti -> biti -> liti -> siti -> titi -> viti -> vili -> vill -> jill
+
+Algortima A*
+Waktu eksekusi: 66 ms
+Waktu eksekusi : 0.066 s
+Jumlah node yang dikunjungi: 310
+jack -> jark -> jarl -> jerl -> jell -> jill

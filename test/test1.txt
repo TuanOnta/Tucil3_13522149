@@ -1,20 +1,20 @@
-Kata awal: cap
-Kata akhir: tie
+Kata awal: earn
+Kata akhir: make
 
 Algortima UCS
-Waktu eksekusi: 236 ms
-Waktu eksekusi : 0.236 s
-Jumlah node yang dikunjungi: 6803
-cap -> tap -> tae -> tie
+Waktu eksekusi: 910 ms
+Waktu eksekusi : 0.91 s
+Jumlah node yang dikunjungi: 9124
+earn -> larn -> lare -> lake -> make
 
 Algortima GreedyBFS
-Waktu eksekusi: 4 ms
-Waktu eksekusi : 0.004 s
-Jumlah node yang dikunjungi: 102
-cap -> tap -> tip -> tie
+Waktu eksekusi: 10 ms
+Waktu eksekusi : 0.01 s
+Jumlah node yang dikunjungi: 117
+earn -> barn -> bare -> mare -> make
 
 Algortima A*
-Waktu eksekusi: 7 ms
-Waktu eksekusi : 0.007 s
-Jumlah node yang dikunjungi: 26
-cap -> tap -> tip -> tie
+Waktu eksekusi: 46 ms
+Waktu eksekusi : 0.046 s
+Jumlah node yang dikunjungi: 160
+earn -> barn -> bare -> bake -> make

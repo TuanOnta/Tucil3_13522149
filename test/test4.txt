@@ -1,0 +1,20 @@
+Kata awal: drum
+Kata akhir: beat
+
+Algortima UCS
+Waktu eksekusi: 153 ms
+Waktu eksekusi : 0.153 s
+Jumlah node yang dikunjungi: 871
+drum -> brum -> brut -> brat -> beat
+
+Algortima GreedyBFS
+Waktu eksekusi: 12 ms
+Waktu eksekusi : 0.012 s
+Jumlah node yang dikunjungi: 44
+drum -> brum -> bram -> beam -> beat
+
+Algortima A*
+Waktu eksekusi: 14 ms
+Waktu eksekusi : 0.014 s
+Jumlah node yang dikunjungi: 21
+drum -> dram -> drat -> brat -> beat
