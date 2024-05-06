@@ -2,19 +2,22 @@ Kata awal: rest
 Kata akhir: room
 
 Algortima UCS
-Waktu eksekusi: 2048 ms
-Waktu eksekusi : 2.048 s
+Waktu eksekusi: 2560 ms
+Waktu eksekusi : 2.56 s
 Jumlah node yang dikunjungi: 25790
+Memori yang digunakan: 10918416 bytes
 rest -> reit -> roit -> root -> room
 
 Algortima GreedyBFS
-Waktu eksekusi: 13 ms
-Waktu eksekusi : 0.013 s
+Waktu eksekusi: 11 ms
+Waktu eksekusi : 0.011 s
 Jumlah node yang dikunjungi: 70
+Memori yang digunakan: 1532704 bytes
 rest -> rist -> riot -> root -> room
 
 Algortima A*
-Waktu eksekusi: 34 ms
-Waktu eksekusi : 0.034 s
+Waktu eksekusi: 35 ms
+Waktu eksekusi : 0.035 s
 Jumlah node yang dikunjungi: 101
+Memori yang digunakan: 1608064 bytes
 rest -> reit -> roit -> root -> room

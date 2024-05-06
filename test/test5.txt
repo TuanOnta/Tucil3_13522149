@@ -2,19 +2,22 @@ Kata awal: lute
 Kata akhir: harp
 
 Algortima UCS
-Waktu eksekusi: 1798 ms
-Waktu eksekusi : 1.798 s
+Waktu eksekusi: 1853 ms
+Waktu eksekusi : 1.853 s
 Jumlah node yang dikunjungi: 24032
+Memori yang digunakan: 10157984 bytes
 lute -> late -> hate -> hare -> harp
 
 Algortima GreedyBFS
-Waktu eksekusi: 13 ms
-Waktu eksekusi : 0.013 s
+Waktu eksekusi: 11 ms
+Waktu eksekusi : 0.011 s
 Jumlah node yang dikunjungi: 116
+Memori yang digunakan: 1533896 bytes
 lute -> late -> hate -> hare -> harp
 
 Algortima A*
 Waktu eksekusi: 28 ms
 Waktu eksekusi : 0.028 s
 Jumlah node yang dikunjungi: 70
+Memori yang digunakan: 1623672 bytes
 lute -> late -> hate -> hare -> harp

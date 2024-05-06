@@ -2,19 +2,22 @@ Kata awal: pile
 Kata akhir: heap
 
 Algortima UCS
-Waktu eksekusi: 1422 ms
-Waktu eksekusi : 1.422 s
+Waktu eksekusi: 1560 ms
+Waktu eksekusi : 1.56 s
 Jumlah node yang dikunjungi: 17046
+Memori yang digunakan: 8532416 bytes
 pile -> pele -> hele -> help -> heap
 
 Algortima GreedyBFS
-Waktu eksekusi: 11 ms
-Waktu eksekusi : 0.011 s
+Waktu eksekusi: 12 ms
+Waktu eksekusi : 0.012 s
 Jumlah node yang dikunjungi: 84
+Memori yang digunakan: 1531656 bytes
 pile -> hile -> hele -> help -> heap
 
 Algortima A*
 Waktu eksekusi: 22 ms
 Waktu eksekusi : 0.022 s
 Jumlah node yang dikunjungi: 53
+Memori yang digunakan: 1596328 bytes
 pile -> pele -> hele -> help -> heap

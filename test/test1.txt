@@ -2,19 +2,22 @@ Kata awal: earn
 Kata akhir: make
 
 Algortima UCS
-Waktu eksekusi: 910 ms
-Waktu eksekusi : 0.91 s
+Waktu eksekusi: 1287 ms
+Waktu eksekusi : 1.287 s
 Jumlah node yang dikunjungi: 9124
+Memori yang digunakan: 6710616 bytes
 earn -> larn -> lare -> lake -> make
 
 Algortima GreedyBFS
-Waktu eksekusi: 10 ms
-Waktu eksekusi : 0.01 s
+Waktu eksekusi: 11 ms
+Waktu eksekusi : 0.011 s
 Jumlah node yang dikunjungi: 117
+Memori yang digunakan: 1534264 bytes
 earn -> barn -> bare -> mare -> make
 
 Algortima A*
-Waktu eksekusi: 46 ms
-Waktu eksekusi : 0.046 s
+Waktu eksekusi: 51 ms
+Waktu eksekusi : 0.051 s
 Jumlah node yang dikunjungi: 160
+Memori yang digunakan: 1720216 bytes
 earn -> barn -> bare -> bake -> make

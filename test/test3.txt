@@ -2,19 +2,22 @@ Kata awal: jack
 Kata akhir: jill
 
 Algortima UCS
-Waktu eksekusi: 3494 ms
-Waktu eksekusi : 3.494 s
+Waktu eksekusi: 3577 ms
+Waktu eksekusi : 3.577 s
 Jumlah node yang dikunjungi: 62649
+Memori yang digunakan: 1506232 bytes
 jack -> fack -> falk -> fall -> fill -> jill
 
 Algortima GreedyBFS
-Waktu eksekusi: 37 ms
-Waktu eksekusi : 0.037 s
+Waktu eksekusi: 36 ms
+Waktu eksekusi : 0.036 s
 Jumlah node yang dikunjungi: 231
+Memori yang digunakan: 1534768 bytes
 jack -> jock -> jack -> juck -> junk -> jink -> jina -> jiva -> jive -> jibe -> jibb -> jibi -> jiri -> jiti -> biti -> liti -> siti -> titi -> viti -> vili -> vill -> jill
 
 Algortima A*
-Waktu eksekusi: 66 ms
-Waktu eksekusi : 0.066 s
+Waktu eksekusi: 70 ms
+Waktu eksekusi : 0.07 s
 Jumlah node yang dikunjungi: 310
+Memori yang digunakan: 1766640 bytes
 jack -> jark -> jarl -> jerl -> jell -> jill
