@@ -1,0 +1,20 @@
+Kata awal: cap
+Kata akhir: tie
+
+Algortima UCS
+Waktu eksekusi: 175 ms
+Waktu eksekusi : 0.175 s
+Jumlah node yang dikunjungi: 6803
+cap -> tap -> tae -> tie
+
+Algortima GreedyBFS
+Waktu eksekusi: 4 ms
+Waktu eksekusi : 0.004 s
+Jumlah node yang dikunjungi: 102
+cap -> tap -> tip -> tie
+
+Algortima A*
+Waktu eksekusi: 8 ms
+Waktu eksekusi : 0.008 s
+Jumlah node yang dikunjungi: 26
+cap -> tap -> tip -> tie

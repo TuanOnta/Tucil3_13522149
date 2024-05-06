@@ -40,7 +40,7 @@ public class Main {
         // Membaca kata awal
         flag = true;
         while (flag) {
-            System.out.print("Masukkan kata awal: ");
+            System.out.print("\n\nMasukkan kata awal: ");
             firstword = scanner.nextLine();
             firstword = firstword.toLowerCase();
             int len = firstword.length();
@@ -118,7 +118,7 @@ public class Main {
 
         // Algortima UCS
         UCS ucs = new UCS();
-        System.out.println("\nAlgortima UCS");
+        System.out.println("\n\nAlgortima UCS");
         ArrayList<Object> ListUCS = ucs.find(firstword, lastword, words);
         if(ListUCS == null){
             ListUCS = new ArrayList<Object>();
@@ -127,7 +127,7 @@ public class Main {
         
 
         // Menyimpan solusis
-        System.out.print("\nApakah anda ingin menyimpan solusi?(y/n) : ");
+        System.out.print("\n\nApakah anda ingin menyimpan solusi?(y/n) : ");
         answer = scanner.nextLine();
         flag = true;
         while (flag){
