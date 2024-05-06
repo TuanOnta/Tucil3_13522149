@@ -102,6 +102,10 @@ public class Main {
         UCS ucs = new UCS();
         System.out.println("\nAlgortima UCS");
         ArrayList<Object> ListUCS = ucs.find(firstword, lastword, words);
+        if(ListUCS == null){
+            ListUCS = new ArrayList<Object>();
+            ListUCS.add("Tidak ditemukan jalan");
+        }
         
 
         // Algortima GreedyBFS
@@ -117,6 +121,10 @@ public class Main {
         AStar AStar = new AStar();
         System.out.println("\n\nAlgortima A*");
         ArrayList<Object> ListAStar = AStar.find(firstword, lastword, words);
+        if(ListAStar == null){
+            ListAStar = new ArrayList<Object>();
+            ListAStar.add("Tidak ditemukan jalan");
+        }
 
 
 
@@ -150,57 +158,62 @@ public class Main {
                 // Menyimpan solusi UCS
                 writer.write("\nAlgortima UCS");
                 writer.newLine();
-                ArrayList<String> resultWords = new ArrayList<>();
-                Node temp = (Node) ListUCS.get(0);
-                while (temp != null) {
-                    resultWords.add(temp.getWord());
-                    temp = temp.getParent();
-                }
 
-                Long time = (Long) ListUCS.get(1);
-                writer.write("Waktu eksekusi: " + time + " ms");
-                writer.newLine();
-                float seconds = (time / 1000F);
-                writer.write("Waktu eksekusi : " + seconds + " s");
-                writer.newLine();
+                if (ListUCS.get(0) instanceof String) {
+                    writer.write("Tidak ditemukan jalan");
+                    writer.newLine();
+                } else {
+                    ArrayList<String> resultWords = new ArrayList<>();
+                    Node temp = (Node) ListUCS.get(0);
+                    while (temp != null) {
+                        resultWords.add(temp.getWord());
+                        temp = temp.getParent();
+                    }
 
-                int nodeCount = (int) ListUCS.get(2);
-                writer.write("Jumlah node yang dikunjungi: " + nodeCount);
-                writer.newLine();
+                    Long time = (Long) ListUCS.get(1);
+                    writer.write("Waktu eksekusi: " + time + " ms");
+                    writer.newLine();
+                    float seconds = (time / 1000F);
+                    writer.write("Waktu eksekusi : " + seconds + " s");
+                    writer.newLine();
 
-                for (int i = resultWords.size() - 1; i >= 0; i--) {
-                    if (i == 0) {
-                        writer.write(resultWords.get(i));
-                    } else {
-                        writer.write(resultWords.get(i) + " -> ");
+                    int nodeCount = (int) ListUCS.get(2);
+                    writer.write("Jumlah node yang dikunjungi: " + nodeCount);
+                    writer.newLine();
+
+                    for (int i = resultWords.size() - 1; i >= 0; i--) {
+                        if (i == 0) {
+                            writer.write(resultWords.get(i));
+                        } else {
+                            writer.write(resultWords.get(i) + " -> ");
+                        }
                     }
                 }
-                
 
                 // Menyimpan solusi GreedyBFS
                 writer.write("\n\nAlgortima GreedyBFS");
                 writer.newLine();
 
-                resultWords = new ArrayList<>();
+                ArrayList<String> resultWords = new ArrayList<>();
                 if (ListGreedyBFS.get(0) instanceof String) {
                     writer.write("Tidak ditemukan jalan");
                     writer.newLine();
                 } else {
-                    temp = (Node) ListGreedyBFS.get(0);
+                    Node temp = (Node) ListGreedyBFS.get(0);
                     
                     while (temp != null) {
                         resultWords.add(temp.getWord());
                         temp = temp.getParent();
                     }
 
-                    time = (Long) ListGreedyBFS.get(1);
+                    Long time = (Long) ListGreedyBFS.get(1);
                     writer.write("Waktu eksekusi: " + time + " ms");
                     writer.newLine();
-                    seconds = (time / 1000F);
+                    Float seconds = (time / 1000F);
                     writer.write("Waktu eksekusi : " + seconds + " s");
                     writer.newLine();
                     
-                    nodeCount = (int) ListGreedyBFS.get(2);
+                    int nodeCount = (int) ListGreedyBFS.get(2);
                     writer.write("Jumlah node yang dikunjungi: " + nodeCount);
                     writer.newLine();
                     
@@ -216,37 +229,44 @@ public class Main {
                 // Menyimpan solusi AStar
                 writer.write("\n\nAlgortima A*");
                 writer.newLine();
-                resultWords = new ArrayList<>();
-                temp = (Node) ListAStar.get(0);
-                while (temp != null) {
-                    resultWords.add(temp.getWord());
-                    temp = temp.getParent();
-                }
-                
-                time = (Long) ListAStar.get(1);
-                writer.write("Waktu eksekusi: " + time + " ms");
-                writer.newLine();
-                seconds = (time / 1000F);
-                writer.write("Waktu eksekusi : " + seconds + " s");
-                writer.newLine();
-                
-                nodeCount = (int) ListAStar.get(2);
-                writer.write("Jumlah node yang dikunjungi: " + nodeCount);
-                writer.newLine();
-                
-                for (int i = resultWords.size() - 1; i >= 0; i--) {
-                    if (i == 0) {
-                        writer.write(resultWords.get(i));
-                    } else {
-                        writer.write(resultWords.get(i) + " -> ");
+
+                if (ListAStar.get(0) instanceof String) {
+                    writer.write("Tidak ditemukan jalan");
+                    writer.newLine();
+                }else{
+                    resultWords = new ArrayList<>();
+                    Node temp = (Node) ListAStar.get(0);
+                    while (temp != null) {
+                        resultWords.add(temp.getWord());
+                        temp = temp.getParent();
                     }
+                    
+                    Long time = (Long) ListAStar.get(1);
+                    writer.write("Waktu eksekusi: " + time + " ms");
+                    writer.newLine();
+                    float seconds = (time / 1000F);
+                    writer.write("Waktu eksekusi : " + seconds + " s");
+                    writer.newLine();
+                    
+                    int nodeCount = (int) ListAStar.get(2);
+                    writer.write("Jumlah node yang dikunjungi: " + nodeCount);
+                    writer.newLine();
+                    
+                    for (int i = resultWords.size() - 1; i >= 0; i--) {
+                        if (i == 0) {
+                            writer.write(resultWords.get(i));
+                        } else {
+                            writer.write(resultWords.get(i) + " -> ");
+                        }
+                    }
+                    System.out.println("File berhasil dibuat: AStar.txt");
                 }
-                System.out.println("File berhasil dibuat: AStar.txt");
-                
+                    
             } catch (IOException e) {
                 System.err.println("Gagal membuat file: " + e.getMessage());
             }
-            }
+            
+        }
             
         scanner.close();
     }

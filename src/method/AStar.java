@@ -44,6 +44,10 @@ public class AStar {
             resultWords.add(temp.getWord());
             temp = temp.getParent();
         }
+        if (resultWords.isEmpty()){
+            System.out.println("Tidak ditemukan jalan");
+            return null;
+        }
 
         for (int i = resultWords.size() - 1; i >= 0; i--) {
             if (i == 0) {
@@ -58,6 +62,5 @@ public class AStar {
         resultList.add(time);
         resultList.add(nodeCount);
         return resultList;
-
     }
 }

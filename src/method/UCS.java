@@ -31,6 +31,11 @@ public class UCS {
             ArrayList<Node> nextWords = util.findWordsUCS(wordsCopy, current.getWord(), val, current);
             queue.addAll(nextWords);
         }
+        if (queue.isEmpty()){
+            System.out.println("Tidak ditemukan jalan");
+            return null;
+        }
+
 
         Long end = System.currentTimeMillis();
         Long time = end - start;
