@@ -93,8 +93,4 @@ public class WordUtil {
         }
         return resultQueue;
     }
-
-    public boolean isValid(String word, List<String> words) {
-        return words.contains(word);
-    }
 }
