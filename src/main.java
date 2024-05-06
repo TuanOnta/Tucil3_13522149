@@ -98,15 +98,14 @@ public class Main {
         System.out.println("Kata awal: " + firstword);
         System.out.println("Kata akhir: " + lastword);
 
-        // Algortima UCS
-        UCS ucs = new UCS();
-        System.out.println("\nAlgortima UCS");
-        ArrayList<Object> ListUCS = ucs.find(firstword, lastword, words);
-        if(ListUCS == null){
-            ListUCS = new ArrayList<Object>();
-            ListUCS.add("Tidak ditemukan jalan");
+        // Algortima A*
+        AStar AStar = new AStar();
+        System.out.println("\n\nAlgortima A*");
+        ArrayList<Object> ListAStar = AStar.find(firstword, lastword, words);
+        if(ListAStar == null){
+            ListAStar = new ArrayList<Object>();
+            ListAStar.add("Tidak ditemukan jalan");
         }
-        
 
         // Algortima GreedyBFS
         GreedyBFS greedyBFS = new GreedyBFS();
@@ -117,16 +116,15 @@ public class Main {
             ListGreedyBFS.add("Tidak ditemukan jalan");
         }
 
-        // Algortima A*
-        AStar AStar = new AStar();
-        System.out.println("\n\nAlgortima A*");
-        ArrayList<Object> ListAStar = AStar.find(firstword, lastword, words);
-        if(ListAStar == null){
-            ListAStar = new ArrayList<Object>();
-            ListAStar.add("Tidak ditemukan jalan");
+        // Algortima UCS
+        UCS ucs = new UCS();
+        System.out.println("\nAlgortima UCS");
+        ArrayList<Object> ListUCS = ucs.find(firstword, lastword, words);
+        if(ListUCS == null){
+            ListUCS = new ArrayList<Object>();
+            ListUCS.add("Tidak ditemukan jalan");
         }
-
-
+        
 
         // Menyimpan solusis
         System.out.print("\nApakah anda ingin menyimpan solusi?(y/n) : ");
