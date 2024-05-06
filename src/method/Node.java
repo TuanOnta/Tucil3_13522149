@@ -2,7 +2,6 @@ package method;
 
 public class Node implements Comparable<Node> { 
     private String word;
-    private int len;
     private int value;
     private int age;
     private Node parent;
@@ -10,7 +9,6 @@ public class Node implements Comparable<Node> {
     // Constructor
     public Node(String word, int value, int age, Node parent) {
         this.word = word;
-        this.len = word.length();
         this.parent = parent;
         this.value = value;
         this.age = age;
@@ -19,9 +17,6 @@ public class Node implements Comparable<Node> {
     // Getter
     public String getWord() {
         return word;
-    }
-    public int getLen() {
-        return len;
     }
     public int getValue() {
         return value;
@@ -38,7 +33,6 @@ public class Node implements Comparable<Node> {
     // Setter
     public void setWord(String word) {
         this.word = word;
-        this.len = word.length();
     }
     public void setParent(Node parent) {
         this.parent = parent;
