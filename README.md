@@ -25,7 +25,7 @@ Program dalam repository ini adalah program yang dapat digunakan untuk menyelesa
 ## Setup
 1. Clone repository
 ```sh
-git clone https://github.com/rafimaliki/Tucil3_13522149
+git clone https://github.com/TuanOnta/Tucil3_13522149
 ```
 2. Change directory ke root dir projek
 ```sh
